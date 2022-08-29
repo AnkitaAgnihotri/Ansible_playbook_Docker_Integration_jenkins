@@ -1,0 +1,8 @@
+- hosts: ansmachine
+  tasks:
+  - name: Build the image
+    shell:
+      cmd: docker image build -f /home/devops/WebAPP/Dockerfile -t webapp2 /home/devops/WebAPP
+  - name: Create the container
+    shell:
+      cmd: docker container run -d -P webapp2
